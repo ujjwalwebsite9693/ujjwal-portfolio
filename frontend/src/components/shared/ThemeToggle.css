@@ -1,0 +1,33 @@
+.theme-toggle {
+  position: relative;
+  width: 56px;
+  height: 30px;
+  border-radius: 100px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7px;
+  flex-shrink: 0;
+}
+
+.theme-toggle__icon {
+  font-size: 13px;
+  color: var(--text-faint);
+  display: flex;
+  z-index: 1;
+  transition: color var(--transition);
+}
+
+.theme-toggle__icon.is-active {
+  color: var(--accent);
+}
+
+.theme-toggle__knob {
+  position: absolute;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}

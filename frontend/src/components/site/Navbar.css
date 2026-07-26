@@ -1,0 +1,144 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background var(--transition), padding var(--transition), box-shadow var(--transition), border-color var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.is-scrolled {
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  padding: 12px 0;
+  border-bottom-color: var(--border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.navbar__logo svg {
+  color: var(--primary);
+}
+
+[data-theme='dark'] .navbar__logo svg {
+  color: var(--accent);
+}
+
+.navbar__logo-dot {
+  color: var(--accent);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.navbar__links a {
+  position: relative;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.navbar__links a:hover {
+  color: var(--text);
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+.navbar__admin-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-faint) !important;
+}
+
+.navbar__admin-link:hover {
+  border-color: var(--primary);
+  color: var(--primary) !important;
+}
+
+.navbar__admin-link::after {
+  display: none;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar__burger {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 98;
+}
+
+@media (max-width: 900px) {
+  .navbar__burger {
+    display: flex;
+  }
+
+  .navbar__links--desktop {
+    display: none;
+  }
+
+  .navbar__links--mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(300px, 80vw);
+    background: var(--surface);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 28px;
+    box-shadow: var(--shadow-lg);
+    font-size: 1.1rem;
+    z-index: 99;
+  }
+}

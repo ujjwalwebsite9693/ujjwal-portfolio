@@ -1,0 +1,134 @@
+.youtube__channel-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  background: linear-gradient(120deg, var(--primary-soft), var(--accent-soft));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.youtube__channel-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #FF0000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  flex-shrink: 0;
+}
+
+.youtube__channel-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.youtube__channel-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.youtube__channel-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.youtube__subscribe-btn,
+.youtube__view-btn {
+  padding: 11px 22px;
+  font-size: 0.9rem;
+}
+
+.youtube__videos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.youtube__video-card {
+  overflow: hidden;
+  display: block;
+}
+
+.youtube__thumb-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.youtube__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.youtube__video-card:hover .youtube__thumb {
+  transform: scale(1.06);
+}
+
+.youtube__play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 27, 30, 0.3);
+  color: #fff;
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.youtube__video-card:hover .youtube__play-overlay {
+  opacity: 1;
+}
+
+.youtube__video-body {
+  padding: 14px 16px;
+}
+
+.youtube__video-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.youtube__empty {
+  color: var(--text-muted);
+  padding: 40px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 900px) {
+  .youtube__videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .youtube__videos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .youtube__channel-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
