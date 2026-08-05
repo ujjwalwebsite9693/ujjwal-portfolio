@@ -41,6 +41,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', uptime: process.uptime() });
 });
 
+// --- Health check ---
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', message: "Ujjwal's Code portfolio API is running" });
+});
+
 // --- Routes ---
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/profile', require('./routes/profile'));
