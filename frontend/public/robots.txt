@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ujjwalsiteco.vercel.app/sitemap.xml
+# Host
+Host: https://www.ujjwalmehta.in
+
+# Sitemap Location
+Sitemap: https://www.ujjwalmehta.in/sitemap.xml
